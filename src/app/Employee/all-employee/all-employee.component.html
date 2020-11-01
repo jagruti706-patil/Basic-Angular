@@ -1,0 +1,23 @@
+<button routerLink="childemployee">Add</button>
+
+<div class="table">
+  <thead>
+    <th>Employee Name</th>
+    <th>Employee Salary</th>
+    <th>Employee Age</th>
+    <th>Action</th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let e of Emp">
+      <td width="150px">{{ e.employee_name }}</td>
+      <td style="text-align: center" width="150px">
+        {{ e.employee_salary | currency }}
+      </td>
+      <td style="text-align: center" width="150px">{{ e.employee_age }}</td>
+      <td>
+        <button (click)="OnEdit(e)">Edit</button>
+        <button (click)="OnDelete(e)">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</div>
